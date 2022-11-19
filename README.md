@@ -1,4 +1,8 @@
 # esx_poziomzagrozenia
-Skrypt który ustawienie kodu in-game przekierowuje jako informacje na kanał discord
+Skrypt który ustawienie kodu in-game przekierowuje jako informacje na kanał discord w postaci wiadomości embed.
 
-Nie zapomnij w configu ustawić swojego webhooka!
+
+W pliku config.lua wklejacie link do swojego webhooka
+```lua
+Config.Webhook = ""
+```
