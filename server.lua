@@ -2,6 +2,7 @@ ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
+local webhook = ""
 
 function sendHook(source, code, color)
     local job = source.getJob()
@@ -15,7 +16,7 @@ function sendHook(source, code, color)
         }
     }
 
-    PerformHttpRequest(Config.Webhook, function(err, text, headers) end, 'POST', json.encode({embeds = message}), { ['Content-Type'] = 'application/json' })
+    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({embeds = message}), { ['Content-Type'] = 'application/json' })
 end
 
 RegisterServerEvent("duszek:poziomzagrozenia")
