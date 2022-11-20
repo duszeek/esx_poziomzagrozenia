@@ -22,10 +22,9 @@ RegisterServerEvent("duszek:poziomzagrozenia")
 AddEventHandler("duszek:poziomzagrozenia", function(code)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
-    local job = xPlayer.getJob()
-
-    if job.name == "police" then
-        if job.grade >= Config.Info[code].grade then
+    
+    if xPlayer.job.name == "police" then
+        if xPlayer.job.grade >= Config.Info[code].grade then
             sendHook(xPlayer, code, Config.Info[code].hookColor)
             xPlayer.showNotification("Pomyslnie zmieniles stopien zagrozenia na: ~p~" .. code)
         else
