@@ -2,9 +2,9 @@
 <h3>Skrypt który ustawienie kodu in-game przekierowuje jako informacje na kanał discord w postaci wiadomości embed.</h3><br /><br />
 
 
-W pliku config.lua wklejacie link do swojego webhooka
+W pliku server.lua wklejacie link do swojego webhooka
 ```lua
-Config.Webhook = ""
+local webhook = "tu_wklejacie_link"
 ```
 <br />
 
