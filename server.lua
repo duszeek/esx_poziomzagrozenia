@@ -1,5 +1,4 @@
 ESX = nil
-local errmessage = "~r~Nie posiadasz wystarczajacej rangi zeby to zrobic"
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
@@ -22,17 +21,15 @@ end
 RegisterServerEvent("duszek:poziomzagrozenia")
 AddEventHandler("duszek:poziomzagrozenia", function(code)
     local _source = source
-	local xPlayer = ESX.GetPlayerFromId(_source)
+    local xPlayer = ESX.GetPlayerFromId(_source)
     local job = xPlayer.getJob()
-    local jobName = job.name
-    local jobGrade = job.grade
 
     if job.name == "police" then
         if job.grade >= Config.Info[code].grade then
             sendHook(xPlayer, code, Config.Info[code].hookColor)
             xPlayer.showNotification("Pomyslnie zmieniles stopien zagrozenia na: ~p~" .. code)
         else
-            xPlayer.showNotification(errmessage)
+            xPlayer.showNotification("~r~Nie posiadasz wystarczajacej rangi zeby to zrobic")
         end
     end
 end)
