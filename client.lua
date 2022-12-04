@@ -26,6 +26,7 @@ function openDangerCodeMenu()
 		}
 	}, function(data, menu)
 		TriggerServerEvent("duszek:poziomzagrozenia", data.current.value)
+		-- commit?
 		menu.close()
 	end, 
 	function(data, menu)
